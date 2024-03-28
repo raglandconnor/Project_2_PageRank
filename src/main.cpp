@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "AdjacencyList.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -9,11 +9,13 @@ int main() {
     string from, to;
     cin >> no_of_lines;
     cin >> power_iterations;
+    Graph graph;
+
     for (int i = 0; i < no_of_lines; i++) {
         cin >> from;
         cin >> to;
-        // Do Something
+        graph.InsertEdge(from, to);
     }
-    //Create a graph object
-    // Created_Graph.PageRank(power_iterations);}
+    graph.PageRank(power_iterations);
+    graph.PrintRanks();
 }
