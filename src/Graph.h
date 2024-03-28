@@ -9,7 +9,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <set>
 #include <iostream>
 #include <iomanip>
 
@@ -20,8 +19,8 @@ class Graph {
 private:
     struct Webpage {
         string url;
-        set<string> outPages;
-        set<string> inPages;
+        vector<string> outPages;
+        vector<string> inPages;
     };
 
     map<string, int> mapper;

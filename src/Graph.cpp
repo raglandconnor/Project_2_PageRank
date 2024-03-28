@@ -29,8 +29,8 @@ void Graph::InsertEdge(std::string from, std::string to) {
     }
 
     // Update inPages & outPages for both urls
-    adjacencyList[mapper[from]].outPages.insert(to);
-    adjacencyList[mapper[to]].inPages.insert(from);
+    adjacencyList[mapper[from]].outPages.push_back(to);
+    adjacencyList[mapper[to]].inPages.push_back(from);
 }
 
 
