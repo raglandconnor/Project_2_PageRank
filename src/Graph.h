@@ -16,12 +16,21 @@ using namespace std;
 class Graph {
 private:
     struct Webpage {
-        double rank;
+        string url;
         set<string> outPages;
         set<string> inPages;
+
+        double getRank() {
+            if (inPages.empty()) {
+                return 0.0;
+            } else {
+                return 1.0f / (double)inPages.size();
+            }
+        }
     };
 
     map<string, int> mapper;
+    map<string, double> rankMapper;
     vector<Webpage> adjacencyList;
 
     int vertexCount = 0;  // Stores how many unique vertices are in the graph
@@ -40,7 +49,8 @@ public:
     void insertEdge(string from, string to);
     void removeEdge(string from, string to);
     bool isEdge(string from, string to);
-    int getRank(string url);
+//    double getRank(string url);
+    void performPowerIterations(int p);
 };
 
 
