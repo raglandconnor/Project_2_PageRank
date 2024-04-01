@@ -10,6 +10,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <sstream>
 #include <iomanip>
 
 using namespace std;
@@ -27,6 +28,11 @@ private:
     map<string, double> rankMapper;
     vector<Webpage> adjacencyList;
     int vertexCount;  // Stores how many unique vertices are in the graph
+    int numPowerIterations;
+
+    // For Catch2 Testing
+    string getStringRepresentation();
+    void parseInput(Graph &graph, const string& input);
 
 public:
     Graph();

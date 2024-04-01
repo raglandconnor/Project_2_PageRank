@@ -16,6 +16,7 @@ int main() {
         cin >> to;
         graph.InsertEdge(from, to);
     }
+
     graph.PageRank(power_iterations);
     graph.PrintRanks();
 }
